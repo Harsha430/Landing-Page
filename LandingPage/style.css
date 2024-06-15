@@ -1,0 +1,282 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+:root {
+  --mencolour: #fff;
+  --pcolour: black;
+  --selcolour: rgb(28, 28, 12);
+  --hovc: rgb(237, 237, 36);
+  --boxo: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dark-mode {
+  --mencolour: black;
+  --pcolour: #fff;
+  --selcolour: rgb(225, 225, 12);
+  --boxo: rgba(221, 221, 23, 0.517) 0px 3px 8px;
+}
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+.ball {
+  height: 600px;
+  width: 600px;
+  border-radius: 50% 15%;
+  background-color: #ffe694;
+  position: absolute;
+  bottom: -200px;
+  left: -100px;
+  z-index: 0;
+  overflow-y: hidden;
+}
+.menu-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--mencolour);
+  box-shadow: var(--boxo);
+  border-bottom-right-radius: 30px;
+  z-index: 999;
+  animation: fadeOut 2s ease-in-out 1 1s both;
+}
+.material-symbols-outlined {
+  cursor: pointer;
+}
+.menu-left label {
+  cursor: pointer;
+  color: var(--pcolour);
+  transition: 0.3s;
+}
+.menu-left:hover {
+  font-size: larger;
+}
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+.menu-right {
+  display: flex;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.menu-right i {
+  position: absolute;
+  font-size: 20px;
+  top: 4px;
+  right: 30px;
+}
+.searcho {
+  position: relative;
+}
+.menu-right a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--pcolour);
+  border-bottom: 2px solid transparent;
+  padding: 2px;
+  transition: border-color 0.3s ease;
+}
+.menu-right input {
+  width: 400px;
+  margin-right: 20px;
+  height: 30px;
+  border-radius: 5px;
+  border-style: none;
+  padding-left: 20px;
+  font-weight: lighter;
+  background-color: #ffe694;
+  border: 2px solid var(--pcolour);
+}
+.specalities {
+  color: var(--pcolour);
+  position: absolute;
+  bottom: 20px;
+  left: 400px;
+}
+.specalities h4 {
+  font-family: "M PLUS Code Latin", monospace;
+  animation: fadeIn 3s ease-in-out 1 1s both;
+  opacity: 0;
+}
+.menu-right a:hover {
+  border-bottom-color: rgb(166, 14, 14);
+  color: rgb(166, 14, 14);
+}
+
+.menu-right input:hover {
+  border: 2px solid #628281;
+}
+.maincontent {
+  height: 100vh;
+  display: flex;
+  z-index: 1;
+  background-color: var(--mencolour);
+}
+.maincontent img {
+  width: 500px;
+  position: absolute;
+  bottom: 100px;
+  animation: fadeIn 3s ease-in-out 1 2s both;
+  z-index: 1;
+  visibility: hidden;
+  transition: 0.5s;
+}
+img:hover {
+  width: 550px;
+}
+.main-left h2 {
+  position: absolute;
+  top: 45%;
+  left: 37%;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  -webkit-text-stroke: 2px var(--pcolour);
+  color: transparent;
+  animation: popup 3s ease-in-out 1 4s both;
+}
+@keyframes popup {
+  0% {
+    transform: translate(-800px, 0px);
+  }
+  50% {
+    transform: translate(30px, 50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.main-left h2::selection {
+  color: var(--selcolour);
+  -webkit-text-stroke: 2px transparent;
+}
+.main-left h1 {
+  -webkit-text-stroke: 2px #f9f871;
+  position: absolute;
+  top: 60px;
+  left: 300px;
+  font-size: 100px;
+  color: transparent;
+  transition: 0.5s ease-in-out; /* Transition for smooth effect */
+  animation: fadeIn 3s ease-in-out 1; /* Apply the fadeIn animation */
+}
+
+.main-left h1::selection {
+  color: black;
+  -webkit-text-stroke: 3px #f9f871;
+}
+.main-left {
+  width: 50%;
+  background-color: #889fa5;
+  border-top-right-radius: 80px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
+  }
+}
+.main-right {
+  color: var(--pcolour);
+  margin-top: 350px;
+  padding-left: 30px;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  transition: 0.5s;
+  animation: fadeOut 3s ease-in-out 1 2s both;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main-right .acc1,
+.acc2 {
+  display: flex;
+  text-align: center;
+  margin-bottom: 50px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.main-right span {
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.main-right .mode2 {
+  margin: 70px 0px;
+}
+.main-right .acc2 {
+  margin-left: 40px;
+}
+.main-right p {
+  font-weight: lighter;
+  font-size: 8px;
+}
+.main-right .acc1 h1,
+.main-right .acc1 p,
+.main-right .acc2 h1,
+.main-right .acc2 p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ______________Footer_________________ */
+footer {
+  height: 30%;
+  width: 100%;
+  background-color: #181818;
+  position: absolute;
+}
+
+footer p {
+  display: block;
+  color: #fff;
+  font-size: 10px;
+  margin: 20px 10px;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: lighter;
+  font-style: normal;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.socio-icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: -30px;
+}
+.socio-icons .fa-brands {
+  margin-left: 7px;
+  color: #ffd43b;
+  cursor: pointer;
+}
+.fa-brands:hover {
+  color: red;
+}
